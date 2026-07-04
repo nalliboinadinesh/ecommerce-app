@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./Backend
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+
+  frontend:
+    build: ./Frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  admin:
+    build: ./Admin
+    ports:
+      - "5000:5000"
+    depends_on:
+      - backend
+    restart: unless-stopped
