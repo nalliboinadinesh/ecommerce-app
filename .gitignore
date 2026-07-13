@@ -1,0 +1,11 @@
+# Node modules
+node_modules/
+**/node_modules/
+
+# Environment files
+.env
+.env.*
+*.env
+
+# Optional: keep local VS Code settings out of repo
+.vscode/
